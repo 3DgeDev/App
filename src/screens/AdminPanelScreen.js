@@ -84,8 +84,8 @@ export default function AdminPanelScreen({ navigation }) {
 
   const onAdd = async () => {
     try {
-      if (!name.trim()) {
-        Alert.alert("Falta info", "Pon el nombre del candidato.");
+      if(!role.trim()) {
+        Alert.alert("Falta info, selecciona personero o contador");
         return;
       }
       if (!imageUri) {
@@ -97,7 +97,7 @@ export default function AdminPanelScreen({ navigation }) {
 
       setName("");
       setImageUri("");
-      setRole("GENERAL");
+      setRole("");
       await load();
       Alert.alert("Listo", "Candidato registrado ✅");
     } catch (e) {
